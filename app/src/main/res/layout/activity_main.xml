@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#EDF1F7"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:gravity="center"
+        android:background="#FFF"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        >
+
+        <TextView
+            android:id="@+id/textLogo"
+            android:textColor="#3e64ff"
+            android:textSize="26sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Messaging" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="30dp"
+        android:id="@+id/textTitle"
+        android:textColor="#212121"
+        android:textSize="23sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Your Messages" />
+
+    <TextView
+        android:layout_marginBottom="30dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="4dp"
+        android:id="@+id/textSubTitle"
+        android:textColor="#B4BAC3"
+        android:textSize="16sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="are safe" />
+
+
+    <LinearLayout
+        android:layout_marginTop="100dp"
+        android:layout_marginBottom="24dp"
+        android:weightSum="2"
+        android:layout_marginRight="24dp"
+        android:layout_marginLeft="24dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_marginRight="12dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:background="@drawable/bgitem"
+            android:layout_width="0dp"
+            android:layout_height="80dp">
+
+
+            <Button
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:id="@+id/TombolBuat"
+                android:textColor="#17103E"
+                android:textSize="18sp"
+                android:background="@drawable/bgitem"
+                android:drawableLeft="@drawable/plus"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:text="Buat Pesan" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginLeft="12dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:background="@drawable/bgitem"
+            android:layout_width="0dp"
+            android:layout_height="80dp">
+
+
+            <Button
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:id="@+id/TombolMasuk"
+                android:textColor="#17103E"
+                android:textSize="18sp"
+                android:background="@drawable/bgitem"
+                android:drawableLeft="@drawable/inbox"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:text="Pesan Masuk" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="24dp"
+        android:weightSum="2"
+        android:layout_marginRight="24dp"
+        android:layout_marginLeft="24dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_marginRight="12dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:background="@drawable/bgitem"
+            android:layout_width="0dp"
+            android:layout_height="80dp">
+
+            <Button
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:id="@+id/TombolPesanKeluar"
+                android:textColor="#17103E"
+                android:textSize="18sp"
+                android:background="@drawable/bgitem"
+                android:drawableLeft="@drawable/send"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:text="Pesan Keluar" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginLeft="12dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:background="@drawable/bgitem"
+            android:layout_width="0dp"
+            android:layout_height="80dp">
+
+
+            <Button
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:id="@+id/TombolAbout"
+                android:textColor="#17103E"
+                android:textSize="18sp"
+                android:background="@drawable/bgitem"
+                android:drawableLeft="@drawable/about"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:text="About" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>
