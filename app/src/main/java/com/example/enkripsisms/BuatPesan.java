@@ -63,9 +63,11 @@ public class BuatPesan extends AppCompatActivity {
     }
 
     protected void  sendSMS(){
+        // Grabs phone number and message.
         phoneNo = phone.getText().toString();
         message = txtMsg.getText().toString();
 
+        // Gets permission
         if(ContextCompat.checkSelfPermission(this, Manifest.permission.SEND_SMS)
         != PackageManager.PERMISSION_GRANTED) {
             if (ActivityCompat.shouldShowRequestPermissionRationale(this,
