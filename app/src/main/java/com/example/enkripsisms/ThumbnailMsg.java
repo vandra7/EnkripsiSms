@@ -3,7 +3,7 @@ package com.example.enkripsisms;
 public class ThumbnailMsg {
     private String nama;
     private String pesan;
-    private String tanggal;
+    private CharSequence tanggal;
 
     public String getNama() {
         return nama;
@@ -21,11 +21,11 @@ public class ThumbnailMsg {
         this.pesan = pesan;
     }
 
-    public String getTanggal() {
+    public CharSequence getTanggal() {
         return tanggal;
     }
 
-    public void setTanggal(String tanggal) {
+    public void setTanggal(CharSequence tanggal) {
         this.tanggal = tanggal;
     }
 }

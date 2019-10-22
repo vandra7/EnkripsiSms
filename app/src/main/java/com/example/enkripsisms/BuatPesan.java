@@ -1,14 +1,20 @@
 package com.example.enkripsisms;
 
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.ContactsContract;
+import android.telephony.SmsManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -17,9 +23,14 @@ import android.widget.Toast;
 
 public class BuatPesan extends AppCompatActivity {
 
+    private EditText txtMsg;
     private EditText phone;
     private Button select;
+    private Button sendBtn;
+    private String phoneNo;
+    private String message;
     private static final int RESULT_PICK_CONTACT =1;
+    private static final int MY_PERMISSIONS_REQUEST_SEND_SMS = 0;
 
 
     @Override
@@ -27,7 +38,8 @@ public class BuatPesan extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_buat_pesan);
 
-
+        txtMsg = findViewById(R.id.txtMessage);
+        sendBtn = findViewById(R.id.btnSendSms);
         phone = findViewById(R.id.txtphoneNo);
         select = findViewById(R.id.contact);
 
@@ -40,7 +52,30 @@ public class BuatPesan extends AppCompatActivity {
             }
         });
 
+        sendBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sendSMS();
+            }
+        });
 
+
+    }
+
+    protected void  sendSMS(){
+        phoneNo = phone.getText().toString();
+        message = txtMsg.getText().toString();
+
+        if(ContextCompat.checkSelfPermission(this, Manifest.permission.SEND_SMS)
+        != PackageManager.PERMISSION_GRANTED) {
+            if (ActivityCompat.shouldShowRequestPermissionRationale(this,
+                    Manifest.permission.SEND_SMS)) {
+            } else {
+                ActivityCompat.requestPermissions(this,
+                        new String[]{Manifest.permission.SEND_SMS},
+                        MY_PERMISSIONS_REQUEST_SEND_SMS);
+            }
+        }
     }
 
     @Override
@@ -57,6 +92,21 @@ public class BuatPesan extends AppCompatActivity {
         }
     }
 
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        switch (requestCode){
+            case MY_PERMISSIONS_REQUEST_SEND_SMS:{
+                if (grantResults.length >0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
+                    SmsManager smsManager = SmsManager.getDefault();
+                    smsManager.sendTextMessage(phoneNo, null, message, null, null);
+                    Toast.makeText(getApplication(), "SMS sent.", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(getApplication(), "SMS failed, please try again.", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+            }
+        }
+    }
 
     private void contactPicked(Intent data){
         Cursor cursor = null;

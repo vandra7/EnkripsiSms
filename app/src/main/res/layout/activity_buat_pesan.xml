@@ -45,7 +45,6 @@
     <LinearLayout
         android:layout_marginTop="200dp"
         android:layout_marginBottom="24dp"
-        android:weightSum="8"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="64dp">
@@ -53,19 +52,20 @@
 
         <EditText
             android:id="@+id/txtMessage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="7"
+            android:layout_width="250dp"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="5dp"
+            android:hint="type a message"
             android:inputType="textMultiLine"
-            android:maxLength="1000"
-            android:hint="type a message"/>
+            android:maxLength="1000" />
 
-        <ImageButton
+        <Button
             android:id="@+id/btnSendSms"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:src="@drawable/sent"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="5dp"
+            android:drawableRight="@drawable/sent"
             android:background="@drawable/bgitem"/>
 
 

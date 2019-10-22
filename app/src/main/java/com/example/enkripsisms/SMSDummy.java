@@ -6,18 +6,27 @@ public class SMSDummy {
     private static String[] pengirim = {
             "Dospem",
             "mama",
-            "adek"
+            "adek",
+            "zufar",
+            "zahran",
+            "galang"
     };
 
     private static String[] pesanTerakhir = {
-            "PI Kerjain anjing",
+            "PI Kerjain oit",
             "beli tisu ya",
-            "Eelllooo"
+            "Eelllooo",
+            "kermh",
+            "ayookk",
+            "okey"
     };
 
     private static String[] tanggal = {
             "20/20/20",
+            "20/20/19",
             "20/20/20",
+            "20/20/20",
+            "20/20/19",
             "20/20/20"
     };
 

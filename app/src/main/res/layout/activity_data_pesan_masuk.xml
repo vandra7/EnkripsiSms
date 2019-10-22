@@ -24,7 +24,7 @@
 
         <TextView
             android:id="@+id/textLogo"
-            android:padding="10dp"
+            android:padding="12dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Messaging"
@@ -37,6 +37,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/bgitem"
+            android:backgroundTint="#EDF1F7"
             android:scrollbars="vertical" />
 
     </LinearLayout>
