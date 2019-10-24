@@ -21,7 +21,7 @@ public class ListMsgAdapter extends RecyclerView.Adapter<ListMsgAdapter.ListView
     @NonNull
     @Override
     public ListViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int viewType) {
-        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_msg, viewGroup, false);
+        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_cardview_hero, viewGroup, false);
                 return new ListViewHolder(view);
     }
 

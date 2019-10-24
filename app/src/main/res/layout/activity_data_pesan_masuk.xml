@@ -38,7 +38,8 @@
             android:layout_height="match_parent"
             android:background="@drawable/bgitem"
             android:backgroundTint="#EDF1F7"
-            android:scrollbars="vertical" />
+            android:scrollbars="vertical"
+            tools:listitem="@layout/item_cardview_hero"/>
 
     </LinearLayout>
 

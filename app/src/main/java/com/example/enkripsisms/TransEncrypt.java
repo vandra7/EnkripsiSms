@@ -2,6 +2,8 @@ package com.example.enkripsisms;
 
 public final class TransEncrypt {
 
+
+
     /**
      * @author Alfa Khrisna
      * Encrypts a message with a double transposition cypher
@@ -10,6 +12,8 @@ public final class TransEncrypt {
      * @return the encrypted message
      */
     public static String encrypt(String msg, String keyword) {
+        int x=0;
+        int y=0;
         // Get cypher length
         int c_length = keyword.length();
 
@@ -28,6 +32,10 @@ public final class TransEncrypt {
         int pointer = 0;
         int min = 0;
         // TODO
+
+
+
+
 
         // Dummy return
         return null;
