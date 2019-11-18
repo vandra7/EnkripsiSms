@@ -11,6 +11,7 @@ package com.example.enkripsisms;
         import android.net.Uri;
         import android.os.Bundle;
         import android.text.format.DateFormat;
+        import android.widget.TextView;
 
         import java.util.ArrayList;
         import java.util.Date;
@@ -18,11 +19,16 @@ package com.example.enkripsisms;
 public class DataPesanMasuk extends AppCompatActivity {
     private RecyclerView rvPesan;
     private ArrayList<ThumbnailMsg> list = new ArrayList<>();
+    TextView smsEncrypt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_data_pesan_masuk);
+
+
+        smsEncrypt = findViewById(R.id.smsEncryp);
+
 
 
 
@@ -59,7 +65,8 @@ public class DataPesanMasuk extends AppCompatActivity {
 
     private void showRecyclerList(){
         rvPesan.setLayoutManager(new LinearLayoutManager(this));
-        ListMsgAdapter listMsgAdapter = new ListMsgAdapter((list));
-        rvPesan.setAdapter(listMsgAdapter);
+
+        CardViewMsgAdapter cardViewMsgAdapter =  new CardViewMsgAdapter(list, DataPesanMasuk.this);
+        rvPesan.setAdapter(cardViewMsgAdapter);
     }
 }

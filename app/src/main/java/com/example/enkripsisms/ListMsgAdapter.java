@@ -32,8 +32,6 @@ public class ListMsgAdapter extends RecyclerView.Adapter<ListMsgAdapter.ListView
         holder.pesan.setText(thumb.getPesan());
         holder.tanggal.setText(thumb.getTanggal());
 
-
-
     }
 
     @Override
