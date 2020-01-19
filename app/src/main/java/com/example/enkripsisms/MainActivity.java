@@ -49,6 +49,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        PesanKeluar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, DataPesanKeluar.class);
+                startActivity(intent);
+            }
+        });
+
 
     }
 }

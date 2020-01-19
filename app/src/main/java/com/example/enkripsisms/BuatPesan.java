@@ -62,6 +62,12 @@ public class BuatPesan extends AppCompatActivity {
 
     }
 
+    //new method for encrypt data to send sms
+    //1. buat sms
+    //2. get data sms
+    //3. panggil transencrypt
+    //4. send sms
+
     protected void  sendSMS(){
         // Grabs phone number and message.
         phoneNo = phone.getText().toString();
