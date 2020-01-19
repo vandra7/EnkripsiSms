@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#EDF1F7"
+    tools:context=".SmsDetail">
+
+    <LinearLayout
+        android:gravity="center"
+        android:background="#FFF"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        >
+
+        <TextView
+            android:id="@+id/textLogo"
+            android:textColor="#3e64ff"
+            android:textSize="26sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Messaging" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/smsEncryp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:text="isi dari sms encrypt"
+        android:textColor="#17103E" />
+
+    <Button
+        android:id="@+id/btnDecrypt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:textColor="#17103E"
+        android:text="decrypt"/>
+
+    <TextView
+        android:id="@+id/smsDecrypt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:textColor="#17103E"
+        android:text="isi dari sms setelah decrypt"/>
+
+
+
+</LinearLayout>

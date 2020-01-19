@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card_view"
+    android:layout_gravity="center"
+    android:layout_marginLeft="16dp"
+    android:layout_marginTop="0dp"
+    android:layout_marginRight="16dp"
+    android:layout_marginBottom="16dp"
+    card_view:cardCornerRadius="8dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/RLayout"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:padding="8dp">
+
+        <ImageView
+            android:id="@+id/smsImage"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_margin="16dp"
+            android:src="@drawable/user"/>
+
+        <TextView
+            android:id="@+id/nama_contact"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/smsImage"
+            android:text="TextView"
+            android:textAllCaps="true"
+             />
+
+        <TextView
+            android:id="@+id/isi_pesan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/nama_contact"
+            android:layout_marginRight="16dp"
+            android:layout_toRightOf="@+id/smsImage"
+            android:layout_marginTop="5dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="TextView"
+
+            />
+
+        <TextView
+            android:id="@+id/tgl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:layout_below="@+id/isi_pesan"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp"
+            android:layout_toRightOf="@+id/smsImage"
+            />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
