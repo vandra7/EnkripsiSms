@@ -10,7 +10,6 @@ public class Encryption {
         char tempArray[] = inputString.toCharArray();
         Arrays.sort(tempArray);
 
-
         return new String(tempArray);
 
     }
@@ -34,11 +33,11 @@ public class Encryption {
         //1 validasi & get key
         String sortedKey = sortString(key);
         int[] keyArray = getIntKeys(key, sortedKey);
-
-        System.out.println("keyArray=");
-        for(int i=0; i<keyArray.length; i++){
-            System.out.println(keyArray[i]);
-        }
+//
+//        System.out.println("keyArray=");
+//        for(int i=0; i<keyArray.length; i++){
+//            System.out.println(keyArray[i]);
+//        }
 
         //validasi message
         if (message.length() < key.length()){
@@ -69,9 +68,9 @@ public class Encryption {
             listGroup.get(keyListGroup).add(charAt);
         }
 
-        for(int i=0; i<listGroup.size(); i++) {
-            System.out.println(listGroup.get(i));
-        }
+//        for(int i=0; i<listGroup.size(); i++) {
+//            System.out.println(listGroup.get(i));
+//        }
 
         // recreate the message
         StringBuilder sb = new StringBuilder();
@@ -84,17 +83,5 @@ public class Encryption {
 
         return sb.toString();
     }
-
-    public static void main(String[] args) throws Exception {
-        String key1 = "ZEBRAS";
-        String key2 = "KOMA";
-        String message = "WEAREDISCOVEREDFLEEATONCE";
-        String singleColumnarTransposition = columnarTransposition(key1, message);
-        System.out.println(singleColumnarTransposition);
-
-        String doubleColumnarTransposition = columnarTransposition(key2, singleColumnarTransposition);
-        System.out.println(doubleColumnarTransposition);
-    }
-
 
 }

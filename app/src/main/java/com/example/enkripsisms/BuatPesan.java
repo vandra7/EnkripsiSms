@@ -15,6 +15,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.telephony.SmsManager;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -29,6 +30,10 @@ public class BuatPesan extends AppCompatActivity {
     private Button sendBtn;
     private String phoneNo;
     private String message;
+    private String key;
+    private String singleColumnarTransposition;
+    private String doubleColumnarTransposition;
+    private EditText keyEn;
     private static final int RESULT_PICK_CONTACT =1;
     private static final int MY_PERMISSIONS_REQUEST_SEND_SMS = 0;
 
@@ -42,6 +47,7 @@ public class BuatPesan extends AppCompatActivity {
         sendBtn = findViewById(R.id.btnSendSms);
         phone = findViewById(R.id.txtphoneNo);
         select = findViewById(R.id.contact);
+        keyEn = findViewById(R.id.key_en);
 
         select.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,16 +68,21 @@ public class BuatPesan extends AppCompatActivity {
 
     }
 
-    //new method for encrypt data to send sms
-    //1. buat sms
-    //2. get data sms
-    //3. panggil transencrypt
-    //4. send sms
 
     protected void  sendSMS(){
         // Grabs phone number and message.
         phoneNo = phone.getText().toString();
         message = txtMsg.getText().toString();
+        key = keyEn.getText().toString();
+
+       try {
+            singleColumnarTransposition = Encryption.columnarTransposition(key, message);
+            doubleColumnarTransposition = Encryption.columnarTransposition(key, singleColumnarTransposition);
+            Log.d("hasilEnkrip", doubleColumnarTransposition);
+        }
+        catch (Exception e){
+            Log.d("hasilEnkrip", "gagal");
+        }
 
         // Gets permission
         if(ContextCompat.checkSelfPermission(this, Manifest.permission.SEND_SMS)
@@ -106,7 +117,7 @@ public class BuatPesan extends AppCompatActivity {
             case MY_PERMISSIONS_REQUEST_SEND_SMS:{
                 if (grantResults.length >0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
                     SmsManager smsManager = SmsManager.getDefault();
-                    smsManager.sendTextMessage(phoneNo, null, message, null, null);
+                    smsManager.sendTextMessage(phoneNo, null, doubleColumnarTransposition, null, null);
                     Toast.makeText(getApplication(), "SMS sent.", Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(getApplication(), "SMS failed, please try again.", Toast.LENGTH_SHORT).show();

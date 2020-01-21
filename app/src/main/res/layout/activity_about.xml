@@ -34,7 +34,7 @@
         android:layout_height="wrap_content"
         android:textColor="#17103E"
         android:textSize="24sp"
-        android:text="Enkripsi SMS dengan Algoritma Apa saja boleh.\nVersi 1.0.0\n\n\n\n \nNama  : Riandra\nNPM    : 56416306
+        android:text="Enkripsi SMS dengan Algoritma double columnar transposition.\n\n\n\n\n \nNama  : Riandra\nNPM    : 56416306
         \nKelas   : 4IA06"/>
 
 
